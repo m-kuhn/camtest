@@ -1,4 +1,6 @@
-Reproduces an issue where a simple app for showing the camera in a qml view crashes on start.
+A simple qml app to use a camera and show it in a window.
+
+The main driver for this is to act a minimal repro for an issue where a static build crashes on start.
 
 ## Build shared libs (works well)
 ```
@@ -22,5 +24,5 @@ $env:QT_PLUGIN_PATH="C:\Users\Public\dev\vcpkg\installed\x64-windows-release\Qt6
 # Hint: add -DCMAKE_LIBRARY_PATH="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.20348.0\um\x64" if it complains about WMF missing
 
 cmake -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE='C:\path\to\vcpkg\scripts\buildsystems\vcpkg.cmake' -DVCPKG_TARGET_TRIPLET=x64-windows-static -S . -B build
-cmake --build build --config Release
+cmake --build build --config Release # Or obviuosly Debug for something debuggable
 ```
